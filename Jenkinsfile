@@ -1,7 +1,7 @@
 pipeline{
     agent any
-    tools{
-        mavan: 'Mavan'
+    tools {
+        mavan 'Mavan'
     }
     stages{
         stage("Test"){
