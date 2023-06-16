@@ -19,13 +19,13 @@ pipeline{
         stage("Deploy on Test"){
             steps{
                 // Deploy on container -> plugin
-                deploy adapters: [tomcat9(credentialsId: 'jenkinsnodedetails', path: '', url: 'http://192.168.0.103:8080/app')], contextPath: '/app', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'tomcat9details', path: '', url: 'http://192.168.0.103:8080')], contextPath: '/app', war: '**/*.war'
             }
         }
         stage("Deploy on Prod"){
             steps{
                 // Deploy on container -> plugin
-                deploy adapters: [tomcat9(credentialsId: 'jenkinsnodedetails', path: '', url: 'http://192.168.0.102:8080/app')], contextPath: '/app', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'tomcat9details', path: '', url: 'http://192.168.0.102:8080')], contextPath: '/app', war: '**/*.war'
             }
         }
     }
